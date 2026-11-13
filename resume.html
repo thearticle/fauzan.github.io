@@ -11,13 +11,14 @@
         <!-- Custom Google font-->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/portfolio.css" rel="stylesheet" />
     </head>
-    <body class="d-flex flex-column h-100 bg-light">
+    <body class="portfolio d-flex flex-column h-100 bg-light">
         <main class="flex-shrink-0">
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
@@ -27,7 +28,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
                             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                            <li class="nav-item"><a class="nav-link" aria-current="page" href="resume.html">Resume</a></li>
                             <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                         </ul>
@@ -43,7 +44,7 @@
                     <div class="col-lg-11 col-xl-9 col-xxl-8">
                         <!-- Experience Section-->
                         <section>
-                            <div class="d-flex align-items-center justify-content-between mb-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4 experience-header">
                                 <h2 class="text-primary fw-bolder mb-0">Experience</h2>
                                 <!-- Download resume button-->
                                 <!-- Note: Set the link href target to a PDF file within your project-->
@@ -52,53 +53,56 @@
                                     Download
                                 </a>
                             </div>
-                            <!-- Experience Card 1-->
-                            <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-center gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-primary fw-bolder mb-2">2022 - Present</div>
-                                                <div class="small fw-bolder"> Quality Assurance Consultant </div>
-                                                <div class="small text-muted"> Mitrais </div>
-                                                <div class="small text-muted">Bandung, ID</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8"><div>Specializing in automation testing and working on assignment for clients. With expertise in functional, nonfunctional testing, and testing architecture, I ensure the quality and reliability of software products. Continuously monitored for technical skill development, I deliver exceptional results in a dynamic environment, staying updated with industry trends to provide clients with the highest level of quality assurance.</div></div>
-                                    </div>
-                                </div>
+                            <div class="experience-grid mb-4">
+                                <article class="card experience-card">
+                                    <h3>Quality Assurance Consultant</h3>
+                                    <p class="experience-meta">Mitrais · 2022 - Present · Bandung, ID</p>
+                                </article>
+                                <article class="card experience-card">
+                                    <h3>Automation Test PIC</h3>
+                                    <p class="experience-meta">Xtremax Indonesia · 2019 - 2022 · Bandung, ID</p>
+                                </article>
+                                <article class="card experience-card">
+                                    <h3>Quality Assurance Engineer Staff</h3>
+                                    <p class="experience-meta">Samsung Research (SRIN) · 2017 - 2019 · Jakarta, ID</p>
+                                </article>
                             </div>
-                            <!-- Experience Card 2-->
-                            <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-center gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-primary fw-bolder mb-2">2019 - 2022</div>
-                                                <div class="small fw-bolder">Automation Test PIC</div>
-                                                <div class="small text-muted">Xtremax Indonesia</div>
-                                                <div class="small text-muted">Bandung, ID</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8"><div>Oversee the implementation of automation tools, research advancements, and track Key Performance Indicators (KPIs). Additionally, I lead in grading and interviewing new QA division members while actively contributing to performance and manual testing efforts. My multifaceted role ensures high-quality software deliverables through efficient and effective testing practices.</div></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Experience Card 3-->
-                            <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-center gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-primary fw-bolder mb-2">2017 - 2019</div>
-                                                <div class="small fw-bolder">Quality Assurance Engineer Staff</div>
-                                                <div class="small text-muted">Samsung Research (SRIN)</div>
-                                                <div class="small text-muted">Jakarta, ID</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8"><div>As a Quality Assurance Engineer staff, I specialize in manual testing for web and mobile applications. With proficiency in utilizing Katalon Studio automation tools, I streamline the testing process to enhance efficiency. Additionally, I have developed a Python-based report compiler for generating comprehensive test result reports, enabling effective communication and informed decision-making. My expertise ensures the delivery of high-quality software solutions.</div></div>
-                                    </div>
-                                </div>
+                            <h3 class="h4 fw-bold mb-3">Project highlights</h3>
+                            <div class="experience-grid mb-5">
+                                <article class="card experience-card">
+                                    <h4 class="h5 fw-bold">Healthcare automation migration</h4>
+                                    <ul class="experience-metrics">
+                                        <li><strong>68% to 90%</strong> Automated test pass rate</li>
+                                        <li><strong>About 900 to 1,400</strong> Automated test cases</li>
+                                    </ul>
+                                    <p>Migrated and stabilized legacy Cypress and Selenium tests in the updated automation framework. Worked with the team to expand regression coverage and evaluated Claude, GitHub Copilot and Cursor for migration and debugging.</p>
+                                    <p class="experience-meta">Cypress · Selenium · Playwright</p>
+                                </article>
+                                <article class="card experience-card">
+                                    <h4 class="h5 fw-bold">Internal automation and performance testing</h4>
+                                    <p>Led the Cypress-to-Playwright transition, mentored teammates, optimized parallel execution and explored Allure reporting. Coordinated CI/CD reporting and piloted performance tests with JMeter and k6.</p>
+                                    <p class="experience-meta">Playwright · Jenkins · Allure · JMeter · k6</p>
+                                </article>
+                                <article class="card experience-card">
+                                    <h4 class="h5 fw-bold">Automotive software quality assurance</h4>
+                                    <p>Worked with business analysts to turn requirements into a traceability matrix and stakeholder test cases. Ran manual, API and database checks, investigated Playwright failures, and reproduced persistent issues in Jenkins.</p>
+                                    <p class="experience-meta">Jira · Xray · Postman · SQL · Playwright</p>
+                                </article>
+                                <article class="card experience-card">
+                                    <h4 class="h5 fw-bold">Desktop application testing</h4>
+                                    <p>Defined ticket-level test coverage in Jira and executed and reported tests in Zephyr. Reviewed C# automation scripts with SpecFlow and Ranorex and set up Cypress prerequisites.</p>
+                                    <p class="experience-meta">Zephyr · SpecFlow · Ranorex · Cypress</p>
+                                </article>
+                                <article class="card experience-card">
+                                    <h4 class="h5 fw-bold">Digital agency automation</h4>
+                                    <p>Led automation for web CMS and mobile apps. Integrated Selenium and Katalon into CI/CD, ran load, endurance and stress tests, and helped coordinate technical interviews, staffing and QA KPIs.</p>
+                                    <p class="experience-meta">Selenium · Katalon · Appium · Jenkins · Bamboo · JMeter · BlazeMeter</p>
+                                </article>
+                                <article class="card experience-card">
+                                    <h4 class="h5 fw-bold">Web and mobile quality assurance</h4>
+                                    <p>Executed manual tests in Jira and TestLink and built a Python report compiler using API data. Updated Selenium automation, introduced Katalon Studio and profiled mobile resource use in Android Studio.</p>
+                                    <p class="experience-meta">Jira · TestLink · Python · Selenium · Katalon · Android Studio</p>
+                                </article>
                             </div>
                         </section>
                         <!-- Education Section-->
