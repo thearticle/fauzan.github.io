@@ -341,3 +341,26 @@ body.page-arrival { animation: page-arrival 520ms ease-in-out backwards; }
   .eyesec-gallery { grid-template-columns: minmax(0, 1fr); }
   .eyesec-gallery figure:last-child { max-width: 18rem; }
 }
+
+@media (max-width: 44rem) {
+  .projects-page .page-intro { padding-block: 2rem 1.25rem; }
+  .projects-page .project-index ul { gap: .5rem; }
+  .projects-page .project-index a { min-height: 44px; align-items: center; }
+  .project-card { padding: 1rem; margin-bottom: 1.25rem; }
+  .project-heading { align-items: start; }
+  .project-heading .button { margin-inline-start: 0; min-height: 44px; align-items: center; }
+  .project-gallery:not(.eyesec-gallery) {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: clamp(8rem, 43%, 12rem);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    padding: .25rem .25rem .75rem;
+  }
+  .project-gallery figure { min-width: 0; scroll-snap-align: start; }
+  .project-gallery a { display: block; }
+  .eyesec-gallery { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .eyesec-gallery figure:last-child { max-width: 14rem; }
+  .project-features .record { padding-block: .85rem; gap: .3rem; }
+}
