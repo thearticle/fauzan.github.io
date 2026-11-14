@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Personal software projects by Fauzan Afianto, featuring KuloWargi, an offline-first mobile family tree app.">
+  <meta name="description" content="Personal software projects by Fauzan Afianto, including KuloWargi and EYESEC Web Viewer Offline.">
   <meta name="theme-color" content="#dcdcdc">
   <title>Projects — Fauzan Afianto</title>
   <link rel="icon" href="assets/favicon.ico">
@@ -29,7 +29,7 @@
     <header class="wrap page-intro">
       <h1>Side projects</h1>
       <nav class="project-index" aria-label="On this page">
-        <ul><li><a href="#kulowargi">KuloWargi <span aria-hidden="true">↓</span></a></li></ul>
+        <ul><li><a href="#kulowargi">KuloWargi <span aria-hidden="true">↓</span></a></li><li><a href="#eyesec">EYESEC Web Viewer Offline <span aria-hidden="true">↓</span></a></li></ul>
       </nav>
     </header>
     <article class="wrap project-card" id="kulowargi" aria-labelledby="kulowargi-title">
@@ -80,6 +80,45 @@
         <div class="record">
           <h4>Keep records on device</h4>
           <p>Family records and card positions are saved locally. JSON export and restore lets you back up the tree or move it to another device without a cloud account.</p>
+        </div>
+      </section>
+    </article>
+    <article class="wrap project-card" id="eyesec" aria-labelledby="eyesec-title">
+      <header class="side-project-intro">
+        <div class="project-heading">
+          <h2 id="eyesec-title">EYESEC Web Viewer Offline</h2>
+          <a class="button primary" href="https://github.com/thearticle/EYESEC-Web-Viewer-Offline">View on GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="lede">A browser viewer for compatible EYESEC cameras on your local network.</p>
+        <p>The viewer runs on your computer and reads the camera’s RTSP feed over Ethernet or Wi-Fi. Once configured, it works during internet outages as long as the local network is available. Video travels directly from the camera to the viewer without a cloud relay.</p>
+        <p>OpenCV reads the camera feed, Flask serves the video to the browser, and FFmpeg converts audio for browser playback when requested.</p>
+        <ul class="tags" aria-label="Technology stack">
+          <li>Python</li><li>Flask</li><li>OpenCV</li><li>FFmpeg</li><li>RTSP</li>
+        </ul>
+      </header>
+      <div class="project-gallery eyesec-gallery">
+        <figure>
+          <a href="https://raw.githubusercontent.com/thearticle/EYESEC-Web-Viewer-Offline/89d34d2eacfafdaff2aa3a5e916019c12551f72f/docs/images/viewer-controls.png">
+            <img src="https://raw.githubusercontent.com/thearticle/EYESEC-Web-Viewer-Offline/89d34d2eacfafdaff2aa3a5e916019c12551f72f/docs/images/viewer-controls.png" alt="Browser viewer controls displayed over a synthetic camera feed" loading="lazy">
+          </a>
+          <figcaption>Viewer controls · Synthetic test feed</figcaption>
+        </figure>
+        <figure>
+          <a href="assets/eyesec-infographic.jpg">
+            <img src="assets/eyesec-infographic.jpg" alt="Infographic tracing video from an EYESEC camera through the local network to a PC and browser" loading="lazy">
+          </a>
+          <figcaption>Local viewing architecture · Infographic</figcaption>
+        </figure>
+      </div>
+      <section class="project-features" aria-labelledby="eyesec-features">
+        <h3 id="eyesec-features">Features</h3>
+        <div class="record">
+          <h4>Viewing controls</h4>
+          <p>Zoom in for detail, pan around the feed, or switch to fullscreen. On compatible cameras, choose HIGH for detail or LOW for a lighter stream.</p>
+        </div>
+        <div class="record">
+          <h4>Audio and diagnostics</h4>
+          <p>Adjust audio volume and boost quiet feeds. Monitor the delivered frame rate and TCP connection time to the camera.</p>
         </div>
       </section>
     </article>

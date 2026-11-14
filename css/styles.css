@@ -334,3 +334,10 @@ body.page-arrival { animation: page-arrival 520ms ease-in-out backwards; }
 @media (max-width: 44rem) {
   .project-gallery { grid-template-columns: repeat(auto-fit, minmax(min(100%, 7rem), 1fr)); }
 }
+
+.eyesec-gallery { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); align-items: start; }
+.eyesec-gallery a { display: block; }
+@media (max-width: 33rem) {
+  .eyesec-gallery { grid-template-columns: minmax(0, 1fr); }
+  .eyesec-gallery figure:last-child { max-width: 18rem; }
+}
