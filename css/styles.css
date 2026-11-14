@@ -1,6 +1,7 @@
 :root {
   color-scheme: light;
-  --paper: #f6f6f6;
+  --paper: #dcdcdc;
+  --page-fade-out: 240ms;
   --ink: #181818;
   --blue: #3a41e4;
   --blue-hover: #2c32bd;
@@ -12,7 +13,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background: var(--paper); }
 body {
   margin: 0;
   min-height: 100vh;
@@ -84,7 +85,7 @@ nav a[aria-current="page"] { font-weight: 600; }
   aspect-ratio: 4 / 4.6;
   object-fit: cover;
   object-position: center top;
-  background: #dcdcdc;
+  background: var(--paper);
   filter: grayscale(1);
 }
 figcaption { padding-top: .7rem; text-align: right; }
@@ -269,11 +270,11 @@ figcaption { padding-top: .7rem; text-align: right; }
   color: var(--blue-hover);
   font: 500 .78rem/1.5 var(--mono);
 }
-.resume-page .career-record > div { max-width: 72ch; }
-body { opacity: 1; transition: opacity 180ms ease; }
+.resume-page .career-record > div { max-width: none; }
+body { opacity: 1; transition: opacity var(--page-fade-out) cubic-bezier(.22, 1, .36, 1); }
 body.is-leaving { opacity: 0; }
 @keyframes page-arrival { from { opacity: 0; } to { opacity: 1; } }
-body.page-arrival { animation: page-arrival 240ms ease both; }
+body.page-arrival { animation: page-arrival 520ms ease-in-out backwards; }
 @media (max-width: 44rem) {
   .index-page .hero { gap: 2rem; padding-block: 2rem; }
   .projects-page .record, .projects-page .featured { grid-template-columns: 1fr; }
@@ -289,3 +290,11 @@ body.page-arrival { animation: page-arrival 240ms ease both; }
   .resume-page .career-date { color: black; background: none; }
 }
 .resume-page .career-record .career-date + h3 { margin-top: 0; }
+
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  ::view-transition-old(root), ::view-transition-new(root) {
+    animation-duration: 520ms;
+    animation-timing-function: ease-in-out;
+  }
+}

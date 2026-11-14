@@ -3,26 +3,42 @@
   const current = location.pathname.split("/").pop() || "index.html";
   const index = pages.indexOf(current);
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+  const nativeTransitions = "onpagereveal" in window && "onpageswap" in window;
   let leaving = false;
-  let readyAt = performance.now() + 900;
-  let lastWheelAt = 0;
+  let readyAt = performance.now() + 650;
   let edgeDirection = 0;
   let distance = 0;
 
   function navigate(url) {
     if (leaving) return;
     leaving = true;
+    if (nativeTransitions || reducedMotion.matches) {
+      location.assign(url);
+      return;
+    }
+    document.body.classList.remove("page-arrival");
     document.body.classList.add("is-leaving");
-    setTimeout(() => location.assign(url), reducedMotion.matches ? 0 : 180);
+    const fadeDuration = parseFloat(getComputedStyle(document.documentElement)
+      .getPropertyValue("--page-fade-out")) || 240;
+    setTimeout(() => location.assign(url), fadeDuration);
+  }
+
+  // Warm adjacent documents so the fade is spent transitioning, not fetching.
+  for (const adjacent of [pages[index - 1], pages[index + 1]]) {
+    if (!adjacent) continue;
+    const hint = document.createElement("link");
+    hint.rel = "prefetch";
+    hint.href = adjacent;
+    document.head.append(hint);
   }
 
   window.addEventListener("pageshow", () => {
     leaving = false;
     distance = 0;
     edgeDirection = 0;
-    readyAt = performance.now() + 900;
+    readyAt = performance.now() + 650;
     document.body.classList.remove("is-leaving");
-    document.body.classList.add("page-arrival");
+    if (!nativeTransitions) document.body.classList.add("page-arrival");
   });
 
   document.addEventListener("click", event => {
@@ -65,23 +81,20 @@
     const direction = Math.sign(event.deltaY);
     const maxScroll = document.documentElement.scrollHeight - innerHeight;
     const atEdge = direction > 0 ? scrollY >= maxScroll - 2 : scrollY <= 2;
-    const newGesture = now - lastWheelAt > 180;
-    lastWheelAt = now;
     if (!atEdge || now < readyAt) {
       distance = 0;
       edgeDirection = 0;
       return;
     }
-    // A deliberate gesture at the boundary avoids skipping unread content.
-    if (newGesture) {
+    // Accumulate continued scrolling at the boundary without requiring a pause.
+    if (direction !== edgeDirection) {
       edgeDirection = direction;
       distance = 0;
     }
-    if (direction !== edgeDirection) return;
     distance += Math.abs(event.deltaY) * (event.deltaMode === 1 ? 16 :
       event.deltaMode === 2 ? innerHeight : 1);
     const destination = pages[index + direction];
-    if (destination && distance >= 70) {
+    if (destination && distance >= 48) {
       navigate(destination + (direction < 0 ? "#page-end" : ""));
     }
   }, { passive: true });
