@@ -173,6 +173,59 @@ figcaption { padding-top: .7rem; text-align: right; }
   nav { width: 100%; justify-content: space-between; }
   .record, .skill-grid, .contact-grid { grid-template-columns: 1fr; }
 }
+/* A consistent reading measure and spacing rhythm for the resume. */
+.resume-page main > .wrap { max-width: 64rem; }
+.resume-page .page-intro { padding-block: clamp(2.5rem, 5vw, 4rem) 2.5rem; }
+.resume-page h1 { font-size: clamp(3.25rem, 7vw, 5.5rem); }
+.resume-page .page-intro .lede { margin-top: .9rem; }
+.resume-page .page-intro .button { margin-top: 1.25rem; }
+.resume-page .section { padding-bottom: 2.5rem; }
+.resume-page .section > h2 {
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  line-height: 1.15;
+  letter-spacing: -.045em;
+  margin-bottom: 1rem;
+}
+.resume-page .record {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  gap: .75rem 2rem;
+  padding-block: 1.5rem;
+}
+.resume-page .record:last-child { padding-bottom: 0; }
+.resume-page .record > * { min-width: 0; }
+.resume-page .record h3 { font-size: 1.18rem; line-height: 1.35; }
+.resume-page .record p:not([class]) { max-width: none; line-height: 1.65; }
+.resume-page .record p:not([class]) + p:not([class]) { margin-top: .75rem; }
+.resume-page .record p + h3 { margin-top: 1.5rem; }
+.resume-page .record > div h3 + p:not([class]) { margin-top: .6rem; }
+.resume-page .record-meta { margin-block: .35rem .75rem; }
+.resume-page .record .eyebrow {
+  letter-spacing: .04em;
+  padding-top: .2rem;
+  font-size: .75rem;
+}
+.resume-page .skill-grid {
+  gap: 1.5rem 2rem;
+  padding-top: 1.5rem;
+}
+.resume-page .skill-grid h3 { font-size: 1.05rem; }
+.resume-page .tags { margin-top: .75rem; gap: .4rem; }
+.resume-page .section > ul { margin-block: .75rem 0; padding-left: 1.25rem; }
+.resume-page .section > ul li + li { margin-top: .35rem; }
+
+@media (max-width: 44rem) {
+  .resume-page .record, .resume-page .skill-grid { grid-template-columns: 1fr; }
+  .resume-page .record { gap: .65rem; padding-block: 1.25rem; }
+  .resume-page .section { padding-bottom: 2rem; }
+  .resume-page .page-intro { padding-bottom: 2rem; }
+}
+@media print {
+  .resume-page main > .wrap { max-width: none; }
+  .resume-page .page-intro { padding-block: 0 1.5rem; }
+  .resume-page h1 { font-size: 36pt; }
+  .resume-page .section { padding-bottom: 1.5rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
