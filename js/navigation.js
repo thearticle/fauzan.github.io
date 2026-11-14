@@ -64,6 +64,41 @@
     });
   }
 
+  function atPageEdge(direction) {
+    const root = document.scrollingElement;
+    return direction > 0 ? root.scrollHeight - root.clientHeight - root.scrollTop <= 3
+      : root.scrollTop <= 3;
+  }
+
+  function goToAdjacentPage(direction) {
+    const destination = pages[index + direction];
+    if (destination) navigate(destination + (direction < 0 ? "#page-end" : ""));
+  }
+
+  let swipe = null;
+  window.addEventListener("touchstart", event => {
+    swipe = null;
+    if (index < 0 || leaving || event.touches.length !== 1 ||
+        event.target.closest("a, button, input, textarea, select, [contenteditable], .project-gallery")) return;
+    const { clientX, clientY } = event.touches[0];
+    swipe = { clientX, clientY, top: atPageEdge(-1), bottom: atPageEdge(1) };
+  }, { passive: true });
+
+  window.addEventListener("touchcancel", () => { swipe = null; }, { passive: true });
+  window.addEventListener("touchend", event => {
+    const start = swipe;
+    swipe = null;
+    if (!start || event.defaultPrevented || event.touches.length ||
+        event.changedTouches.length !== 1) return;
+    const { clientX, clientY } = event.changedTouches[0];
+    const vertical = start.clientY - clientY;
+    if (Math.abs(vertical) < 64 || Math.abs(vertical) < 1.5 * Math.abs(clientX - start.clientX)) return;
+    const direction = Math.sign(vertical);
+    if ((direction > 0 ? start.bottom : start.top) && atPageEdge(direction)) {
+      goToAdjacentPage(direction);
+    }
+  }, { passive: true });
+
   window.addEventListener("wheel", event => {
     if (index < 0 || leaving || event.ctrlKey || event.defaultPrevented ||
         Math.abs(event.deltaX) > Math.abs(event.deltaY) ||
@@ -79,9 +114,7 @@
 
     const now = performance.now();
     const direction = Math.sign(event.deltaY);
-    const maxScroll = document.documentElement.scrollHeight - innerHeight;
-    const atEdge = direction > 0 ? scrollY >= maxScroll - 2 : scrollY <= 2;
-    if (!atEdge || now < readyAt) {
+    if (!atPageEdge(direction) || now < readyAt) {
       distance = 0;
       edgeDirection = 0;
       return;
@@ -93,9 +126,6 @@
     }
     distance += Math.abs(event.deltaY) * (event.deltaMode === 1 ? 16 :
       event.deltaMode === 2 ? innerHeight : 1);
-    const destination = pages[index + direction];
-    if (destination && distance >= 48) {
-      navigate(destination + (direction < 0 ? "#page-end" : ""));
-    }
+    if (distance >= 48) goToAdjacentPage(direction);
   }, { passive: true });
 })();
