@@ -364,3 +364,15 @@ body.page-arrival { animation: page-arrival 520ms ease-in-out backwards; }
   .eyesec-gallery figure:last-child { max-width: 14rem; }
   .project-features .record { padding-block: .85rem; gap: .3rem; }
 }
+
+.edge-links { display: none; }
+@media (any-pointer: coarse), (max-width: 44rem) {
+  .edge-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+    margin-block: 0 1.5rem;
+  }
+  .edge-links .button { min-height: 44px; align-items: center; }
+  .edge-links .primary { margin-inline-start: auto; }
+}

@@ -47,7 +47,7 @@
     const link = event.target.closest("a");
     if (!link || link.target || link.hasAttribute("download")) return;
     const url = new URL(link.href);
-    if (url.origin !== location.origin || url.hash ||
+    if (url.origin !== location.origin || (url.hash && url.hash !== "#page-end") ||
         !pages.includes(url.pathname.split("/").pop()) ||
         url.pathname === location.pathname) return;
     event.preventDefault();
@@ -84,20 +84,30 @@
     swipe = { clientX, clientY, top: atPageEdge(-1), bottom: atPageEdge(1) };
   }, { passive: true });
 
-  window.addEventListener("touchcancel", () => { swipe = null; }, { passive: true });
-  window.addEventListener("touchend", event => {
-    const start = swipe;
-    swipe = null;
-    if (!start || event.defaultPrevented || event.touches.length ||
-        event.changedTouches.length !== 1) return;
-    const { clientX, clientY } = event.changedTouches[0];
-    const vertical = start.clientY - clientY;
-    if (Math.abs(vertical) < 64 || Math.abs(vertical) < 1.5 * Math.abs(clientX - start.clientX)) return;
-    const direction = Math.sign(vertical);
-    if ((direction > 0 ? start.bottom : start.top) && atPageEdge(direction)) {
-      goToAdjacentPage(direction);
+  document.addEventListener("touchmove", event => {
+    if (!swipe || leaving || event.touches.length !== 1 || !event.cancelable) return;
+    const { clientX, clientY } = event.touches[0];
+    const vertical = swipe.clientY - clientY;
+    if (Math.abs(vertical) < 1.5 * Math.abs(clientX - swipe.clientX)) {
+      swipe = null;
+      return;
     }
-  }, { passive: true });
+    const direction = Math.sign(vertical);
+    if (!pages[index + direction] ||
+        !(direction > 0 ? swipe.bottom : swipe.top) || !atPageEdge(direction)) {
+      swipe = null;
+      return;
+    }
+    // Claim outward edge swipes before Android starts native overscroll.
+    event.preventDefault();
+    if (Math.abs(vertical) < 64) return;
+    swipe = null;
+    goToAdjacentPage(direction);
+  }, { passive: false });
+
+  for (const type of ["touchcancel", "touchend"]) {
+    window.addEventListener(type, () => { swipe = null; }, { passive: true });
+  }
 
   window.addEventListener("wheel", event => {
     if (index < 0 || leaving || event.ctrlKey || event.defaultPrevented ||
