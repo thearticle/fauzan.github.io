@@ -28,15 +28,22 @@
   <main id="main" tabindex="-1">
     <header class="wrap page-intro">
       <h1>Side projects</h1>
+      <nav class="project-index" aria-label="On this page">
+        <ul><li><a href="#kulowargi">KuloWargi <span aria-hidden="true">↓</span></a></li></ul>
+      </nav>
     </header>
-    <article class="wrap section" aria-labelledby="kulowargi">
+    <article class="wrap project-card" id="kulowargi" aria-labelledby="kulowargi-title">
       <header class="side-project-intro">
-        <h2 id="kulowargi">KuloWargi</h2>
+        <div class="project-heading">
+          <h2 id="kulowargi-title">KuloWargi</h2>
+          <a class="button primary" href="https://github.com/thearticle/kulowargi-family-tree">View on GitHub <span aria-hidden="true">↗</span></a>
+        </div>
         <p class="lede">An offline-first mobile app for mapping and exploring your family tree across generations.</p>
+        <p>I built KuloWargi to make it easier to see how relatives connect as a family tree grows. The app pairs a canvas for exploring branches with a searchable directory. You can find a relative by name and jump straight to their place in the tree, or edit a member’s details and relationships in the app.</p>
+        <p>A custom layout engine arranges relatives by generation and keeps partners together. You can fine-tune the layout by moving cards yourself. The app stores the tree on your device and lets you export it as JSON for backup or transfer.</p>
         <ul class="tags" aria-label="Technology stack">
           <li>React Native</li><li>Expo</li><li>TypeScript</li><li>SVG</li><li>AsyncStorage</li>
         </ul>
-        <a class="button primary" href="https://github.com/thearticle/kulowargi-family-tree">View on GitHub <span aria-hidden="true">↗</span></a>
       </header>
       <div class="project-gallery" aria-label="KuloWargi screenshots">
         <figure>
@@ -51,19 +58,30 @@
           <img src="https://raw.githubusercontent.com/thearticle/kulowargi-family-tree/54cfa2e39e22d670b747d10abd00925e7634def7/docs/screenshots/directory_list_view.jpg" width="460" height="1024" alt="Member directory with a search field and a list of family members">
           <figcaption>Searchable directory</figcaption>
         </figure>
+        <figure>
+          <img src="https://raw.githubusercontent.com/thearticle/kulowargi-family-tree/54cfa2e39e22d670b747d10abd00925e7634def7/docs/screenshots/edit_member_modal.jpg" width="460" height="1024" alt="Form for editing a family member and their relationships">
+          <figcaption>Member editor</figcaption>
+        </figure>
+        <figure>
+          <img src="https://raw.githubusercontent.com/thearticle/kulowargi-family-tree/54cfa2e39e22d670b747d10abd00925e7634def7/docs/screenshots/credits_modal.jpg" width="460" height="1024" alt="Credits dialog inside KuloWargi">
+          <figcaption>In-app credits</figcaption>
+        </figure>
       </div>
-      <div class="record">
-        <h3>Explore the tree</h3>
-        <p>Pan and pinch to zoom across generations, drag cards into position, or search the directory and jump straight to a family member.</p>
-      </div>
-      <div class="record">
-        <h3>Automatic layout</h3>
-        <p>A custom layout groups partners, orders relatives by generation, and routes parent–child lines around cards. You can adjust positions manually and snap cards to a grid.</p>
-      </div>
-      <div class="record">
-        <h3>Keep records on device</h3>
-        <p>Family records and card positions are saved locally. JSON export and restore lets you back up the tree or move it to another device without a cloud account.</p>
-      </div>
+      <section class="project-features" aria-labelledby="kulowargi-features">
+        <h3 id="kulowargi-features">Features</h3>
+        <div class="record">
+          <h4>Explore the tree</h4>
+          <p>Pan and pinch to zoom across generations, drag cards into position, or search the directory and jump straight to a family member.</p>
+        </div>
+        <div class="record">
+          <h4>Automatic layout</h4>
+          <p>A custom layout groups partners, orders relatives by generation, and routes parent–child lines around cards. You can adjust positions manually and snap cards to a grid.</p>
+        </div>
+        <div class="record">
+          <h4>Keep records on device</h4>
+          <p>Family records and card positions are saved locally. JSON export and restore lets you back up the tree or move it to another device without a cloud account.</p>
+        </div>
+      </section>
     </article>
   </main>
   <footer class="site-footer" id="page-end">
