@@ -10,7 +10,7 @@ I work across web, mobile, APIs, and data validation, using tools such as Playwr
 | --- | --- |
 | [Home](https://afianto.dev/) | My QA focus and a snapshot of project impact |
 | [Résumé](https://afianto.dev/resume.html) | Work history, internships, university research, and technical skills |
-| [Projects](https://afianto.dev/projects.html) | Case studies on automation migration, test coverage, CI/CD, and reporting |
+| [Projects](https://afianto.dev/projects.html) | Personal software projects, including the KuloWargi family tree app |
 | [Contact](https://afianto.dev/contact.html) | LinkedIn and GitHub profiles |
 
 ```mermaid

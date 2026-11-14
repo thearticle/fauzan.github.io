@@ -298,3 +298,24 @@ body.page-arrival { animation: page-arrival 520ms ease-in-out backwards; }
     animation-timing-function: ease-in-out;
   }
 }
+
+
+.side-project-intro .lede { margin-top: .75rem; }
+.side-project-intro .button { margin-top: 1.25rem; }
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(.75rem, 3vw, 2rem);
+  margin-block: 2rem;
+}
+.project-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: .75rem;
+}
+.project-gallery figcaption { text-align: left; letter-spacing: .04em; }
+@media (max-width: 33rem) {
+  .project-gallery { grid-template-columns: minmax(0, 18rem); justify-content: center; }
+}
