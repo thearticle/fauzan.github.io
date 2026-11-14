@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Test automation projects and experiments by Fauzan Afianto.">
+  <meta name="description" content="Personal software projects by Fauzan Afianto, including KuloWargi and EYESEC Web Viewer Offline.">
   <meta name="theme-color" content="#dcdcdc">
   <title>Projects — Fauzan Afianto</title>
   <link rel="icon" href="assets/favicon.ico">
@@ -27,88 +27,101 @@
   </header>
   <main id="main" tabindex="-1">
     <header class="wrap page-intro">
-      <h1>Projects</h1>
-      <p class="lede">Selected work in automation migration, test coverage, CI/CD, and reporting.</p>
-
+      <h1>Side projects</h1>
+      <nav class="project-index" aria-label="On this page">
+        <ul><li><a href="#kulowargi">KuloWargi <span aria-hidden="true">↓</span></a></li><li><a href="#eyesec">EYESEC Web Viewer Offline <span aria-hidden="true">↓</span></a></li></ul>
+      </nav>
     </header>
-    <div class="wrap">
-      <section class="section" aria-labelledby="case-studies">
-        <h2 id="case-studies">Selected project experience</h2>
-        <article class="record">
-          <h3>Healthcare automation migration</h3>
-          <div>
-            <p class="record-meta">Automation migration team member</p>
-            <p>Migrated and stabilized legacy Cypress and Selenium tests within an updated automation framework. Contributed to a team effort that increased the automated test pass rate from 68% to 90% and expanded the suite from approximately 900 to 1,400 cases. Evaluated AI development tools for migration and debugging.</p>
-            <ul class="tags"><li>Cypress</li><li>Selenium</li><li>Playwright</li><li>Regression testing</li></ul>
-          </div>
-        </article>
-        <article class="record">
-          <h3>Playwright adoption and execution optimization</h3>
-          <div>
-            <p class="record-meta">Internal automation team member</p>
-            <p>Led a Cypress-to-Playwright transition and mentored teammates through complex automation scenarios. Analyzed parallel execution to improve test runtime, explored Allure reporting, and supported CI/CD integration. Developed performance test plans and piloted tests with JMeter and k6.</p>
-            <ul class="tags"><li>Playwright</li><li>Jenkins</li><li>JMeter</li><li>k6 pilots</li></ul>
-          </div>
-        </article>
-        <article class="record">
-          <h3>Automotive requirements and software validation</h3>
-          <div>
-            <p class="record-meta">Quality analyst</p>
-            <p>Translated business requirements into traceable test cases with business analysts. Combined manual testing, Playwright test execution, Postman API checks, and SQL database validation to investigate failures and provide evidence-based recommendations to the automation team.</p>
-            <ul class="tags"><li>Postman</li><li>SQL</li><li>Playwright</li><li>Jira</li><li>Xray</li><li>Jenkins</li></ul>
-          </div>
-        </article>
-        <article class="record">
-          <h3>Desktop application quality assurance</h3>
-          <div>
-            <p class="record-meta">Manual and automation testing</p>
-            <p>Planned desktop application test coverage in Jira, executed and reported tests through Zephyr, and analyzed C# automation using SpecFlow and Ranorex. Also configured the Node.js prerequisites for Cypress testing.</p>
-            <ul class="tags"><li>SpecFlow</li><li>Ranorex</li><li>C#</li><li>Jira</li><li>Zephyr</li></ul>
-          </div>
-        </article>
-        <article class="record">
-          <h3>Web and mobile automation in CI/CD</h3>
-          <div>
-            <p class="record-meta">Automation person in charge</p>
-            <p>Coordinated automation for web content management systems and mobile applications. Integrated Selenium tests written in Java, with Cucumber scenarios and Maven builds, alongside Katalon Studio workflows in CI/CD. Managed test planning and reporting and executed load, endurance, and stress tests with JMeter and BlazeMeter. Integrated test execution with Jenkins and Bamboo and supported OutSystems delivery workflows. Used Appium and Tasker for mobile OTP-related testing.</p>
-            <ul class="tags"><li>Java</li><li>Selenium</li><li>Cucumber</li><li>Maven</li><li>Katalon Studio</li><li>Appium</li></ul>
-          </div>
-        </article>
-        <article class="record">
-          <h3>Consolidating test results with Python</h3>
-          <div>
-            <p class="record-meta">Junior tester</p>
-            <p>Tested web and mobile applications and addressed gaps in test reporting with an API-based Python report compiler. Maintained Selenium tests, introduced Katalon Studio, and participated in Android Studio profiling to assess mobile resource usage.</p>
-            <ul class="tags"><li>Python</li><li>API integration</li><li>Jira</li><li>TestLink</li><li>Android Studio</li></ul>
-          </div>
-        </article>
-      </section>
-      <section class="featured" aria-labelledby="featured">
-        <div>
-          <p class="eyebrow">Featured project</p>
-          <h2 id="featured">OTP authenticator testing</h2>
+    <article class="wrap project-card" id="kulowargi" aria-labelledby="kulowargi-title">
+      <header class="side-project-intro">
+        <div class="project-heading">
+          <h2 id="kulowargi-title">KuloWargi</h2>
+          <a class="button primary" href="https://github.com/thearticle/kulowargi-family-tree">View on GitHub <span aria-hidden="true">↗</span></a>
         </div>
-        <div>
-          <p>Explored generating time-based one-time passwords (TOTP) within automated authentication tests using AeroGear OTP and the Katalon TOTP Module. The work focused on incorporating OTP verification into repeatable test scenarios.</p>
-          <div class="links">
-            <a class="text-link" href="https://github.com/aerogear-attic/aerogear-otp-java">AeroGear OTP<span aria-hidden="true">↗</span></a>
-            <a class="text-link" href="https://store.katalon.com/product/59/Katalon-TOTP-Module">Katalon TOTP Module<span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-      </section>
-      <section class="section" aria-labelledby="experiments">
-        <h2 id="experiments">Other experiments</h2>
-        <ul class="project-list">
-          <li>Cypress web test automation</li>
-          <li>Tasker automation for approval workflows</li>
-          <li>Test automation with Robot Framework</li>
-          <li>CI pipeline integration for automated tests</li>
-          <li>Generating PDF documents from test reports</li>
-          <li>Exploring 2Captcha integration in test workflows</li>
-          <li>Automation experiments with Katalon Studio</li>
+        <p class="lede">An offline-first mobile app for mapping and exploring your family tree across generations.</p>
+        <p>I built KuloWargi to make it easier to see how relatives connect as a family tree grows. The app pairs a canvas for exploring branches with a searchable directory. You can find a relative by name and jump straight to their place in the tree, or edit a member’s details and relationships in the app.</p>
+        <p>A custom layout engine arranges relatives by generation and keeps partners together. You can fine-tune the layout by moving cards yourself. The app stores the tree on your device and lets you export it as JSON for backup or transfer.</p>
+        <ul class="tags" aria-label="Technology stack">
+          <li>React Native</li><li>Expo</li><li>TypeScript</li><li>SVG</li><li>AsyncStorage</li>
         </ul>
+      </header>
+      <div class="project-gallery" aria-label="KuloWargi screenshots">
+        <figure>
+          <img src="https://raw.githubusercontent.com/thearticle/kulowargi-family-tree/54cfa2e39e22d670b747d10abd00925e7634def7/docs/screenshots/tree_view_light.jpg" width="460" height="1024" alt="KuloWargi’s light canvas showing family members connected by branches">
+          <figcaption>Family tree · Light mode</figcaption>
+        </figure>
+        <figure>
+          <img src="https://raw.githubusercontent.com/thearticle/kulowargi-family-tree/54cfa2e39e22d670b747d10abd00925e7634def7/docs/screenshots/tree_view_dark.jpg" width="460" height="1024" alt="Family tree canvas in dark mode">
+          <figcaption>Family tree · Dark mode</figcaption>
+        </figure>
+        <figure>
+          <img src="https://raw.githubusercontent.com/thearticle/kulowargi-family-tree/54cfa2e39e22d670b747d10abd00925e7634def7/docs/screenshots/directory_list_view.jpg" width="460" height="1024" alt="Member directory with a search field and a list of family members">
+          <figcaption>Searchable directory</figcaption>
+        </figure>
+        <figure>
+          <img src="https://raw.githubusercontent.com/thearticle/kulowargi-family-tree/54cfa2e39e22d670b747d10abd00925e7634def7/docs/screenshots/edit_member_modal.jpg" width="460" height="1024" alt="Form for editing a family member and their relationships">
+          <figcaption>Member editor</figcaption>
+        </figure>
+        <figure>
+          <img src="https://raw.githubusercontent.com/thearticle/kulowargi-family-tree/54cfa2e39e22d670b747d10abd00925e7634def7/docs/screenshots/credits_modal.jpg" width="460" height="1024" alt="Credits dialog inside KuloWargi">
+          <figcaption>In-app credits</figcaption>
+        </figure>
+      </div>
+      <section class="project-features" aria-labelledby="kulowargi-features">
+        <h3 id="kulowargi-features">Features</h3>
+        <div class="record">
+          <h4>Explore the tree</h4>
+          <p>Pan and pinch to zoom across generations, drag cards into position, or search the directory and jump straight to a family member.</p>
+        </div>
+        <div class="record">
+          <h4>Automatic layout</h4>
+          <p>A custom layout groups partners, orders relatives by generation, and routes parent–child lines around cards. You can adjust positions manually and snap cards to a grid.</p>
+        </div>
+        <div class="record">
+          <h4>Keep records on device</h4>
+          <p>Family records and card positions are saved locally. JSON export and restore lets you back up the tree or move it to another device without a cloud account.</p>
+        </div>
       </section>
-    </div>
+    </article>
+    <article class="wrap project-card" id="eyesec" aria-labelledby="eyesec-title">
+      <header class="side-project-intro">
+        <div class="project-heading">
+          <h2 id="eyesec-title">EYESEC Web Viewer Offline</h2>
+          <a class="button primary" href="https://github.com/thearticle/EYESEC-Web-Viewer-Offline">View on GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="lede">A browser viewer for compatible EYESEC cameras on your local network.</p>
+        <p>The viewer runs on your computer and reads the camera’s RTSP feed over Ethernet or Wi-Fi. Once configured, it works during internet outages as long as the local network is available. Video travels directly from the camera to the viewer without a cloud relay.</p>
+        <p>OpenCV reads the camera feed, Flask serves the video to the browser, and FFmpeg converts audio for browser playback when requested.</p>
+        <ul class="tags" aria-label="Technology stack">
+          <li>Python</li><li>Flask</li><li>OpenCV</li><li>FFmpeg</li><li>RTSP</li>
+        </ul>
+      </header>
+      <div class="project-gallery eyesec-gallery">
+        <figure>
+          <a href="https://raw.githubusercontent.com/thearticle/EYESEC-Web-Viewer-Offline/89d34d2eacfafdaff2aa3a5e916019c12551f72f/docs/images/viewer-controls.png">
+            <img src="https://raw.githubusercontent.com/thearticle/EYESEC-Web-Viewer-Offline/89d34d2eacfafdaff2aa3a5e916019c12551f72f/docs/images/viewer-controls.png" alt="Browser viewer controls displayed over a synthetic camera feed" loading="lazy">
+          </a>
+          <figcaption>Viewer controls · Synthetic test feed</figcaption>
+        </figure>
+        <figure>
+          <a href="assets/eyesec-infographic.jpg">
+            <img src="assets/eyesec-infographic.jpg" alt="Infographic tracing video from an EYESEC camera through the local network to a PC and browser" loading="lazy">
+          </a>
+          <figcaption>Local viewing architecture · Infographic</figcaption>
+        </figure>
+      </div>
+      <section class="project-features" aria-labelledby="eyesec-features">
+        <h3 id="eyesec-features">Features</h3>
+        <div class="record">
+          <h4>Viewing controls</h4>
+          <p>Zoom in for detail, pan around the feed, or switch to fullscreen. On compatible cameras, choose HIGH for detail or LOW for a lighter stream.</p>
+        </div>
+        <div class="record">
+          <h4>Audio and diagnostics</h4>
+          <p>Adjust audio volume and boost quiet feeds. Monitor the delivered frame rate and TCP connection time to the camera.</p>
+        </div>
+      </section>
+    </article>
   </main>
   <footer class="site-footer" id="page-end">
     <div class="wrap footer-inner">
