@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Personal software projects by Fauzan Afianto, including KuloWargi and EYESEC Web Viewer Offline.">
+  <meta name="description" content="Personal software projects by Fauzan Afianto, including KuloWargi and the EYESEC web and Android camera viewers.">
   <meta name="theme-color" content="#dcdcdc">
   <title>Projects — Fauzan Afianto</title>
   <link rel="icon" href="assets/favicon.ico">
@@ -29,7 +29,7 @@
     <header class="wrap page-intro">
       <h1>Side projects</h1>
       <nav class="project-index" aria-label="On this page">
-        <ul><li><a href="#kulowargi">KuloWargi <span aria-hidden="true">↓</span></a></li><li><a href="#eyesec">EYESEC Web Viewer Offline <span aria-hidden="true">↓</span></a></li></ul>
+        <ul><li><a href="#kulowargi">KuloWargi <span aria-hidden="true">↓</span></a></li><li><a href="#eyesec">EYESEC Web Viewer Offline <span aria-hidden="true">↓</span></a></li><li><a href="#eyesec-android">EYESEC Android Viewer <span aria-hidden="true">↓</span></a></li></ul>
       </nav>
     </header>
     <article class="wrap project-card" id="kulowargi" aria-labelledby="kulowargi-title">
@@ -119,6 +119,56 @@
         <div class="record">
           <h4>Audio and diagnostics</h4>
           <p>Adjust audio volume and boost quiet feeds. Monitor the delivered frame rate and TCP connection time to the camera.</p>
+        </div>
+      </section>
+    </article>
+    <article class="wrap project-card" id="eyesec-android" aria-labelledby="eyesec-android-title">
+      <header class="side-project-intro">
+        <div class="project-heading">
+          <h2 id="eyesec-android-title">EYESEC Android Viewer Offline</h2>
+          <a class="button primary" href="https://github.com/thearticle/EYESEC-Android-Viewer-Offline">View on GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="lede">A native Android app for viewing compatible RTSP cameras over your local network.</p>
+        <p>I built the Android viewer for checking a camera directly from a phone or tablet. When the camera and device are on the same working local network, live viewing can continue during an internet outage. The app feeds H.264 video into Android’s MediaCodec hardware decoder and uses Jetpack Compose for the viewing controls.</p>
+        <ul class="tags" aria-label="Technology stack">
+          <li>Kotlin</li><li>Jetpack Compose</li><li>MediaCodec</li><li>H.264</li><li>RTSP</li>
+        </ul>
+      </header>
+      <div class="project-gallery" aria-label="EYESEC Android viewer screenshots">
+        <figure>
+          <a href="https://raw.githubusercontent.com/thearticle/EYESEC-Android-Viewer-Offline/90c1a407578b74b7a49811f751cddc6ffab6e5fa/docs/screenshots/01_live_view_fit.png"><img src="https://raw.githubusercontent.com/thearticle/EYESEC-Android-Viewer-Offline/90c1a407578b74b7a49811f751cddc6ffab6e5fa/docs/screenshots/01_live_view_fit.png" alt="Live camera view with the original aspect ratio" loading="lazy"></a>
+          <figcaption>Fit mode</figcaption>
+        </figure>
+        <figure>
+          <a href="https://raw.githubusercontent.com/thearticle/EYESEC-Android-Viewer-Offline/90c1a407578b74b7a49811f751cddc6ffab6e5fa/docs/screenshots/02_live_view_stretched.png"><img src="https://raw.githubusercontent.com/thearticle/EYESEC-Android-Viewer-Offline/90c1a407578b74b7a49811f751cddc6ffab6e5fa/docs/screenshots/02_live_view_stretched.png" alt="Live camera view stretched to fill the display" loading="lazy"></a>
+          <figcaption>Stretch mode</figcaption>
+        </figure>
+        <figure>
+          <a href="https://raw.githubusercontent.com/thearticle/EYESEC-Android-Viewer-Offline/90c1a407578b74b7a49811f751cddc6ffab6e5fa/docs/screenshots/03_camera_connection_modal.png"><img src="https://raw.githubusercontent.com/thearticle/EYESEC-Android-Viewer-Offline/90c1a407578b74b7a49811f751cddc6ffab6e5fa/docs/screenshots/03_camera_connection_modal.png" alt="Camera connection settings panel" loading="lazy"></a>
+          <figcaption>Camera connection</figcaption>
+        </figure>
+        <figure>
+          <a href="https://raw.githubusercontent.com/thearticle/EYESEC-Android-Viewer-Offline/90c1a407578b74b7a49811f751cddc6ffab6e5fa/docs/screenshots/04_finding_credentials_help.png"><img src="https://raw.githubusercontent.com/thearticle/EYESEC-Android-Viewer-Offline/90c1a407578b74b7a49811f751cddc6ffab6e5fa/docs/screenshots/04_finding_credentials_help.png" alt="Illustrated camera setup guide in the app" loading="lazy"></a>
+          <figcaption>Setup guide</figcaption>
+        </figure>
+        <figure>
+          <a href="https://raw.githubusercontent.com/thearticle/EYESEC-Android-Viewer-Offline/90c1a407578b74b7a49811f751cddc6ffab6e5fa/docs/screenshots/05_credits_fauzan_afianto.png"><img src="https://raw.githubusercontent.com/thearticle/EYESEC-Android-Viewer-Offline/90c1a407578b74b7a49811f751cddc6ffab6e5fa/docs/screenshots/05_credits_fauzan_afianto.png" alt="In-app developer credits panel" loading="lazy"></a>
+          <figcaption>Developer credits</figcaption>
+        </figure>
+      </div>
+      <section class="project-features" aria-labelledby="eyesec-android-features">
+        <h3 id="eyesec-android-features">Features</h3>
+        <div class="record">
+          <h4>Stream and display modes</h4>
+          <p>Switch between high and low quality streams where supported. Fit the image to preserve its proportions, or stretch it to fill the screen.</p>
+        </div>
+        <div class="record">
+          <h4>Touch controls</h4>
+          <p>Pinch to zoom up to 6×, drag to inspect a part of the frame, and double-tap to reset or zoom in.</p>
+        </div>
+        <div class="record">
+          <h4>Connection feedback</h4>
+          <p>Check the camera connection indicator and network response time. An illustrated guide is available in the app for initial setup.</p>
         </div>
       </section>
     </article>
